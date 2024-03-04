@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /** Зберігання параметрів і результатів обчислень
 */
-public class Item2d implements Serializable{
+public class CalculationResult implements Serializable{
     private static final long serialVersionUID = 1L;
     /** Аргумент обчислювальної функції. */
     private int decimalValue;
@@ -13,7 +13,7 @@ public class Item2d implements Serializable{
     /** Результат переведення в 16-кову систему обчислення */
     private int hexNumber;
 
-    public Item2d(int decimalValue, int octNumber, int hexNumber) {
+    public CalculationResult(int decimalValue, int octNumber, int hexNumber) {
         this.decimalValue = decimalValue;
         this.octNumber = octNumber;
         this.hexNumber = hexNumber;
