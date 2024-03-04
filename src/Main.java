@@ -1,4 +1,4 @@
-package task1;
+package src;
 import java.util.Scanner;
 
 public class Main {
@@ -16,4 +16,5 @@ public class Main {
         }
         System.out.println("Двійкове число: " + binaryNum);
     }
+    
 }
