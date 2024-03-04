@@ -1,6 +1,6 @@
 package src;
 
-public class Calc {
+public class Calculate {
     public CalculationResult calculate(int decimalValue) {
         String hexNumInStr = "";
         int decimalLocal = decimalValue;
