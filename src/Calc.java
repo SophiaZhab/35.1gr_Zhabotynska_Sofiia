@@ -23,7 +23,7 @@ public class Calc {
     }
 
         private String NumberAsLetter(int number){
-            if(number < 10) return "" + number;
+            if(number < 10) {return Integer.toString(number);}
             else{
             switch (number) {
                 case 10:
@@ -38,6 +38,8 @@ public class Calc {
                     return "E";
                 case 15:
                     return "F";
+                default:
+                    return " ";
             }}
         }
     }

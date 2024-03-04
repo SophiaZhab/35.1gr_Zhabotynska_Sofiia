@@ -8,13 +8,6 @@ public class Main {
         System.out.println("Введіть число в десятковій системі числення: ");
         int decimalValue = scanner.nextInt();
         scanner.close();
-        String binaryNum = "";
-
-        while (decimalNum > 0) {
-            binaryNum = decimalNum % 2 + binaryNum;
-            decimalNum /=2;
-        }
-        System.out.println("Двійкове число: " + binaryNum);
     }
     
 }
