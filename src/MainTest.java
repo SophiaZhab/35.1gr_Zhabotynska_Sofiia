@@ -9,8 +9,8 @@ public class MainTest {
         CalculationResult result = calculator.calculate(1765);
 
         // Вивід результатів обчислень
-        System.out.println("Decimal Value: " + result.getDecimalValue());
-        System.out.println("Octal Count: " + result.getOctNumber());
-        System.out.println("Hex Count: " + result.getHexNumber());
+        System.out.println("Значення десяткового числа: " + result.getDecimalValue());
+        System.out.println("8-х цифр: " + result.getOctNumber());
+        System.out.println("16-х цифр: " + result.getHexNumber());
     }
 }
