@@ -70,4 +70,20 @@ public class Item2d implements Serializable{
     public String toString() {
         return "Десяткове число = " + decimalValue + ", кількість цифр у 8-у числі = " + octNumber + ", у 16-у числі = " + hexNumber;
         }
+
+    public boolean equals(Object obj) {
+            if (this == obj)
+            return true;
+            if (obj == null)
+            return false;
+            if (getClass() != obj.getClass())
+            return false;
+    
+            Item2d other = (Item2d) obj;
+            if (Double.doubleToLongBits(decimalValue) != Double.doubleToLongBits(other.decimalValue))
+            return false;
+            if (Math.abs(Math.abs(octNumber) - Math.abs(other.octNumber)) > 0)
+            return false;
+            return true;
+            }
 }
