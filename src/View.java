@@ -1,16 +1,7 @@
 package src;
 
 import java.io.IOException;
-/** Product
-* (шаблон проектирования
-* Factory Method)<br>
-* Интерфейс "фабрикуемых"
-* объектов<br>
-* Объявляет методы
-* отображения объектов
-* @author xone
-* @version 1.0
-*/
+
 public interface View {
 /** Отображает заголовок */
 public void viewHeader();
