@@ -9,6 +9,12 @@ import java.io.InputStreamReader;
  */
 public class Main {
 
+    private View view;
+
+    public Main(View view) {
+        this.view = view;
+    }
+
     /**
      * Об'єкт класу Calculate для виконання розрахунків.
      */
@@ -74,7 +80,8 @@ public class Main {
      * @param args параметри командного рядка
      */
     public static void main(String[] args) {
-        Main main = new Main();
+        Main main = new Main(new ViewableResult().getView());
         main.menu();
-    }
+        }
+
 }
