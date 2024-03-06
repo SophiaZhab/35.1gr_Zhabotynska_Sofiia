@@ -43,7 +43,7 @@ public class ViewTable extends ViewResult {
     public void outHeader() {
         Formatter fmt = new Formatter();
         fmt.format("%s%d%s%2$d%s", "%", (width-3)/2, " | %", "\n");
-        System.out.printf(fmt.toString(), "x ", "y ");
+        System.out.printf(fmt.toString(), "decimal ", "oct ");
 }
 
     public void outBody() {

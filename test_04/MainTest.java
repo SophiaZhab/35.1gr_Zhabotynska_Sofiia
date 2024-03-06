@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import Task_03.Calculate;
 import Task_03.Item2d;
 import Task_03.ViewResult;
+import Task_04.ViewTable;
 
 import static org.junit.jupiter.api.Assertions.assertEquals; 
 import static org.junit.Assert.assertTrue;
@@ -21,6 +22,7 @@ public class MainTest {
      */
     @Test
         public void testCalc() {
+        ViewTable tbl = new ViewTable(10, 5);
     ViewResult view = new ViewResult(3);
     view.init(7);
     Item2d item = new Item2d();
