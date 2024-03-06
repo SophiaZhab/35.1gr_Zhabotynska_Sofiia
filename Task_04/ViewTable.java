@@ -30,7 +30,7 @@ public class ViewTable extends ViewResult {
     }
 
     private void outLine() {
-        for (int i = (int)width; i > 0; i--) {
+        for (int i = width; i > 0; i--) {
             System.out.print('-');
         }
     }
