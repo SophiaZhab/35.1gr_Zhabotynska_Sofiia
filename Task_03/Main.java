@@ -1,4 +1,4 @@
-package src;
+package Task_03;
 
 import java.io.IOException;
 import java.io.BufferedReader;
@@ -17,7 +17,7 @@ public class Main {
     /**
      * Метод для відображення текстового меню та виклику методів об'єкта Calculate.
      */
-    private void menu() {
+    protected void menu() {
         String s = null;
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         do {

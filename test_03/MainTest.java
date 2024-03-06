@@ -1,14 +1,16 @@
-package test;
+package test_03;
 
 import org.junit.jupiter.api.Test;
+
+import Task_03.Calculate;
+import Task_03.Item2d;
+import Task_03.ViewResult;
+
 import static org.junit.jupiter.api.Assertions.assertEquals; 
 import static org.junit.Assert.assertTrue;
 import junit.framework.Assert;
 
 import java.io.IOException;
-import src.Calculate;
-import src.ViewResult;
-import src.Item2d;
 
 /**
  * Клас тестів для перевірки функціональності класів Calculate і ViewResult.

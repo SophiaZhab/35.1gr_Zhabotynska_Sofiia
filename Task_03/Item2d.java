@@ -1,4 +1,4 @@
-package src;
+package Task_03;
 import java.io.Serializable;
 
 /** Клас для зберігання параметрів і результатів обчислень
