@@ -153,7 +153,7 @@ public class ViewResult implements View {
     @Override
     public void viewBody() {
         for (Item2d item : items) {
-            System.out.printf("(%.0f; %.3f) ", item.getDecimalValue(), item.getOctNumber());
+            System.out.format("(%d; %d; %d) ", item.getDecimalValue(), item.getOctNumber(), item.getOctNumber());
         }
         System.out.println();
     }

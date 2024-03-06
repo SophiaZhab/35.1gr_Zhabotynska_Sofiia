@@ -4,12 +4,14 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+import Task_04.ViewTable;
+
 /**
  * Клас для демонстрації серіалізації та десеріалізації.
  */
 public class Main {
 
-    private View view;
+    public View view;
 
     public Main(View view) {
         this.view = view;
@@ -18,7 +20,6 @@ public class Main {
     /**
      * Об'єкт класу Calculate для виконання розрахунків.
      */
-    Calculate calc = new Calculate();
 
     /**
      * Метод для відображення текстового меню та виклику методів об'єкта Calculate.
@@ -43,30 +44,30 @@ public class Main {
                     break;
                 case 'п':
                     System.out.println("Перегляд поточного запису.");
-                    calc.show();
+                    view.viewShow();
                     break;
                 case 'г':
                     System.out.println("Генерую.");
-                    calc.init((int) (Math.round(Math.random() * 100000)));
-                    calc.show();
+                    view.viewInit();
+                    view.viewShow();
                     break;
                 case 'з':
                     System.out.println("Зберігаю поточний.");
                     try {
-                        calc.save();
+                        view.viewSave();
                     } catch (IOException e) {
                         System.out.println("Помилка серіалізації: " + e);
                     }
-                    calc.show();
+                    view.viewShow();
                     break;
                 case 'в':
                     System.out.println("Відновлюю останній.");
                     try {
-                        calc.restore();
+                        view.viewRestore();
                     } catch (Exception e) {
                         System.out.println("Помилка серіалізації: " + e);
                     }
-                    calc.show();
+                    view.viewShow();
                     break;
                 default:
                     System.out.print("Невірна команда. ");

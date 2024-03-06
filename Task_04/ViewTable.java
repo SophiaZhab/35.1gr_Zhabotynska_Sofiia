@@ -6,22 +6,22 @@ import Task_03.ViewResult;
 
 public class ViewTable extends ViewResult {
     private static final int DEFAULT_WIDTH = 20;
-    private double width;
+    private int width;
 
     public ViewTable() {
         width = DEFAULT_WIDTH;
     }
 
-    public ViewTable(double width) {
+    public ViewTable(int width) {
         this.width = width;
     }
 
-    public ViewTable(double width, int n) {
+    public ViewTable(int width, int n) {
         super(n);
         this.width = width;
     }
 
-    public double setWidth(double width) {
+    public double setWidth(int width) {
         return this.width = width;
     }
 
@@ -35,26 +35,26 @@ public class ViewTable extends ViewResult {
         }
     }
 
-    private void outLineLn() {
+    public void outLineLn() {
         outLine();
         System.out.println();
     }
 
-    private void outHeader() {
+    public void outHeader() {
         Formatter fmt = new Formatter();
-        fmt.format("%s%d%s%2$d%s", "%", (width - 3) / 2, "s | %", "s\n");
+        fmt.format("%s%d%s%2$d%s", "%", (width-3)/2, " | %", "\n");
         System.out.printf(fmt.toString(), "x ", "y ");
-    }
+}
 
-    private void outBody() {
+    public void outBody() {
         Formatter fmt = new Formatter();
-        fmt.format("%s%d%s%2$d%s", "%", (width - 3) / 2, ".0f | %", ".3f\n");
-        for (Item2d item : getItems()) {
-            System.out.printf(fmt.toString(), item.getDecimalValue(), item.getOctNumber());
-        }
+        fmt.format("%s%d%s%2$d%s", "%", (width-3)/2, ".0f | %", ".3f\n");
+        for(Item2d item : getItems()) {
+        System.out.printf(fmt.toString(), item.getDecimalValue(), item.getOctNumber(), item.getHexNumber());
+    }
     }
 
-    public final void init(double width) {
+    public final void initWidth(int width) {
         this.width = width;
         viewInit();
     }
