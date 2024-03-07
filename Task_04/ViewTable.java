@@ -74,17 +74,19 @@ public class ViewTable extends ViewResult {
      */
     public void outHeader() {
         Formatter fmt = new Formatter();
-        fmt.format("%s%s%s%s%s%s%s", "| ", "десяткова сис.", " | ", "вісімкова сис.", " | ", "шістнадцяткова", " |");
+        int localWidth = (width - 4) / 3;
+        fmt.format("%-" + (localWidth - 10) + "s | %-" + localWidth + "s | %s",  "десяткова сис.",  "вісімкова сис.",  "шістнадцяткова");
         System.out.println(fmt);}
     /**
      * Метод для друку тіла таблиці.
      */
     public void outBody() {
-        Formatter fmt = new Formatter();
+        int localWidth = (width - 4) / 3;
         for(Item2d item : getItems()) {
-            fmt.format("%14s %14s %14s\n", item.getDecimalValue(), item.getOctNumber(), item.getHexNumber());}
-        System.out.println(fmt);
-    
+            Formatter fmt = new Formatter();
+            fmt.format("%-" + (localWidth - 1) + "d | %-" + localWidth + "s | %s%n", item.getDecimalValue(), item.getOctNumber(), item.getHexNumber());
+            System.out.printf(fmt.toString());
+        }
     }
     /**
      * Метод для налаштування ширини таблиці та ініціалізації таблиці.
