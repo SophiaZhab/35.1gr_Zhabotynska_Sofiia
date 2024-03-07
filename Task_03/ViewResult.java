@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.random.*;
 
 /**
  * Клас для представлення результатів розрахунків.
@@ -106,7 +107,9 @@ public class ViewResult implements View {
     * @param stepdecimalValue крок зміни десяткового значення для наступних елементів
     */
     public void init(int stepdecimalValue) {
-        int decimalLocal = 0;
+        int[] numbers = { 100, 1000, 10000, 100000};
+        int randomIndex = (int)(Math.random() * numbers.length);
+        int decimalLocal = (int)(Math.random() * ((int)(Math.random() * numbers[randomIndex])));
         for (Item2d item : items) {
             item.setDecOctHex(decimalLocal, calculateOct(decimalLocal), calculateHex(decimalLocal));
             decimalLocal += stepdecimalValue;
@@ -118,7 +121,9 @@ public class ViewResult implements View {
     */
     @Override
     public void viewInit() {
-        init((int) Math.random() * 100000);
+        int[] numbers = { 100, 1000, 10000};
+        int randomIndex = (int)(Math.random() * numbers.length);
+        init((int)(Math.random() * numbers[randomIndex]));
     }
     /**
     * Реалізує метод {@link View#viewSave()} для збереження колекції {@link #items} у файл.

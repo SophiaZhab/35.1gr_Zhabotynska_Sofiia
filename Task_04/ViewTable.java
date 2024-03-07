@@ -5,7 +5,7 @@ import Task_03.Item2d;
 import Task_03.ViewResult;
 
 public class ViewTable extends ViewResult {
-    private static final int DEFAULT_WIDTH = 20;
+    private static final int DEFAULT_WIDTH = 51;
     private int width;
 
     public ViewTable() {
@@ -42,16 +42,15 @@ public class ViewTable extends ViewResult {
 
     public void outHeader() {
         Formatter fmt = new Formatter();
-        fmt.format("%s%d%s%2$d%s", "%", (width-3)/2, " | %", "\n");
-        System.out.printf(fmt.toString(), "decimal ", "oct ");
-}
+        fmt.format("%s%s%s%s%s%s%s", "| ", "десяткова сис.", " | ", "вісімкова сис.", " | ", "шістнадцяткова", " |");
+        System.out.println(fmt);}
 
     public void outBody() {
         Formatter fmt = new Formatter();
-        fmt.format("%s%d%s%2$d%s", "%", (width-3)/2, ".0f | %", ".3f\n");
         for(Item2d item : getItems()) {
-        System.out.printf(fmt.toString(), item.getDecimalValue(), item.getOctNumber(), item.getHexNumber());
-    }
+            fmt.format("%14s %14s %14s\n", item.getDecimalValue(), item.getOctNumber(), item.getHexNumber());}
+        System.out.println(fmt);
+    
     }
 
     public final void initWidth(int width) {
@@ -66,9 +65,9 @@ public class ViewTable extends ViewResult {
 
     @Override
     public void init(int stepdecimalValue) {
-        System.out.print("Initialization... ");
+        System.out.print("Ініціалізація... ");
         super.init(stepdecimalValue);
-        System.out.println("done. ");
+        System.out.println("готово. ");
     }
 
     @Override

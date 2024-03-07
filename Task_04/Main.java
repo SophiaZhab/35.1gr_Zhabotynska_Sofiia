@@ -6,7 +6,7 @@ public class Main extends Task_03.Main {
         super(view);
     }
     public static void main(String[] args){
-        ViewTable viewTable = new ViewTable(20); // Ініціалізація ViewTable з шириною 20
+        ViewTable viewTable = new ViewTable(40); // Ініціалізація ViewTable з шириною 20
         viewTable.viewInit();
         Main main = new Main(new ViewableTable().getView());
         main.menu();
