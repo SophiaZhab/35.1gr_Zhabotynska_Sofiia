@@ -1,51 +1,72 @@
 package Task_06;
 
-import java.util.Queue;
 import java.util.Vector;
 import Task_05.Command;
 
-public interface Queue {
-  void put(Command cmd);
-
-  /**
-   * Удаляет задачу из очереди;
-   * шаблон Worker Thread
-   * 
-   * @return удаляемая задача
-   */
-  Command take();
-}
-
+/**
+ * Клас {@code CommandQueue} реалізує чергу для зберігання та виконання команд.
+ * 
+ * @author Софія Жаботинська
+ */
 public class CommandQueue implements Queue {
 
+  /**
+   * Список команд, що очікують на виконання.
+   */
   private Vector<Command> tasks;
-
+  /**
+   * Прапорець, що вказує, чи потік знаходиться в режимі очікування.
+   */
   private boolean waiting;
-
+  /**
+   * Прапорець завершення роботи черги.
+   */
   private boolean shutdown;
 
+  /**
+   * Встановлює прапорець завершення
+   */
   public void shutdown() {
     shutdown = true;
   }
 
+  /**
+   * Конструктор для {@code CommandQueue}.
+   * 
+   * Ініціалізує поля {@code tasks}, {@code waiting}, {@code shutdown}
+   * і створює новий потік для виконання команд.
+   */
   public CommandQueue() {
     tasks = new Vector<Command>();
     waiting = false;
     new Thread(new Worker()).start();
   }
 
+  /**
+   * Додає команду до черги.
+   * 
+   * @param r команда для додавання до черги
+   */
   @Override
-  public synchronized void put(Command cmd) {
-    tasks.add(cmd);
+  public void put(Command r) {
+    tasks.add(r);
     if (waiting) {
-      notifyAll();
+      synchronized (this) {
+        notifyAll();
+      }
     }
   }
 
+  /**
+   * Бере команду з черги.
+   * 
+   * @return перша команда в черзі
+   */
   @Override
   public Command take() {
     if (tasks.isEmpty()) {
       synchronized (this) {
+
         waiting = true;
         try {
           wait();
@@ -57,21 +78,17 @@ public class CommandQueue implements Queue {
     return (Command) tasks.remove(0);
   }
 
-  @Override
-  public boolean retainAll(Collection<?> c) {
-    boolean modified = false;
-    Iterator<?> it = tasks.iterator();
-    while (it.hasNext()) {
-      if (!c.contains(it.next())) {
-        it.remove();
-        modified = true;
-      }
-    }
-    return modified;
-  }
-
+  /**
+   * Обслуговує чергу задач; Pattern Worker Thread
+   *
+   * @see Runnable
+   */
   private class Worker implements Runnable {
 
+    /**
+     * Вилучає з черги готові до виконання задачі
+     */
+    @Override
     public void run() {
       while (!shutdown) {
         Command r = take();

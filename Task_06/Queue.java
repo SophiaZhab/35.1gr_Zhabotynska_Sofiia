@@ -7,11 +7,11 @@ public interface Queue {
   void put(Command cmd);
 
   /**
-   * Удаляет задачу из очереди;
-   * шаблон Worker Thread
-   * 
-   * @return удаляемая задача
-   */
+    * Видаляє завдання з черги;
+    * шаблон Worker Thread
+    *
+    * @return завдання, що видаляється
+    */
   Command take();
 }
 
