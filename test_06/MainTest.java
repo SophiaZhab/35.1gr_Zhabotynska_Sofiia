@@ -5,8 +5,9 @@ import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import Task_0203.ViewResult;
 import Task_06.*;
-import Task_03.ViewResult;
 
 /**
  * Тестування класів завдання 6

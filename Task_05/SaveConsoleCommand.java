@@ -1,7 +1,8 @@
 package Task_05;
 
 import java.io.IOException;
-import Task_03.View;
+
+import Task_0203.View;
 
 /**
  * Консольна команда

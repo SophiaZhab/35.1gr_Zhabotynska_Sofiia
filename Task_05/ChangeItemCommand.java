@@ -1,6 +1,6 @@
 package Task_05;
 
-import Task_03.Item2d;
+import Task_0203.Item2d;
 
 /**
  * Команда

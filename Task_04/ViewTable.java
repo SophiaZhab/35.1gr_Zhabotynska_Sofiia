@@ -1,8 +1,9 @@
 package Task_04;
 
 import java.util.Formatter;
-import Task_03.Item2d;
-import Task_03.ViewResult;
+
+import Task_0203.Item2d;
+import Task_0203.ViewResult;
 /**
  * Клас `ViewTable` успадковує клас `ViewResult` та забезпечує функціональність 
  * для відображення таблиці значень у різних системах числення.

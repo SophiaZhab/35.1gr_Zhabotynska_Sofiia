@@ -1,11 +1,11 @@
 package Task_04;
-import Task_03.View;
+import Task_0203.View;
 /**
  * Цей клас `Main` є підкласом `Task_03.Main`.
  * Містить реалізацію статичного методу main()
  */
-public class Main extends Task_03.Main {
-    /** Ініціалізує поле {@linkplain Task_03.Main#view view} */
+public class Main extends Task_0203.Main {
+    /** Ініціалізує поле {@linkplain Task_0203.Main#view view} */
     public Main(View view){
         super(view);
     }

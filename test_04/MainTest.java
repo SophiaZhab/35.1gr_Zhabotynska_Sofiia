@@ -2,9 +2,9 @@ package test_04;
 
 import org.junit.jupiter.api.Test;
 
-import Task_03.Calculate;
-import Task_03.Item2d;
-import Task_03.ViewResult;
+import Task_0203.Calculate;
+import Task_0203.Item2d;
+import Task_0203.ViewResult;
 import Task_04.ViewTable;
 
 import static org.junit.jupiter.api.Assertions.assertEquals; 

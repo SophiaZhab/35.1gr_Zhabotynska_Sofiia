@@ -1,7 +1,8 @@
 package Task_06;
 
 import java.util.concurrent.TimeUnit;
-import Task_03.ViewResult;
+
+import Task_0203.ViewResult;
 import Task_05.Command;
 
 /**

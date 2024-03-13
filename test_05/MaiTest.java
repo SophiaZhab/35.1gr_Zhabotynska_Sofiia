@@ -2,8 +2,9 @@ package test_05;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
-import Task_03.Item2d;
-import Task_03.ViewResult;
+
+import Task_0203.Item2d;
+import Task_0203.ViewResult;
 import Task_05.ChangeConsoleCommand;
 import Task_05.ChangeItemCommand;
 

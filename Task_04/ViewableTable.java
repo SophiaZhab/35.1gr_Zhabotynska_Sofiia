@@ -1,7 +1,7 @@
 package Task_04;
 
-import Task_03.ViewableResult;
-import Task_03.View;
+import Task_0203.View;
+import Task_0203.ViewableResult;
 /**
  * Клас `ViewableTable` успадковує клас `ViewableResult` і призначений для 
  * надання інтерфейсу `View` для доступу до табличних даних і їх відображення.

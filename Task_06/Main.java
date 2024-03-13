@@ -1,9 +1,9 @@
 package Task_06;
 
-import Task_03.View;
 import Task_05.ChangeConsoleCommand;
 import Task_05.GenerateConsoleCommand;
 import Task_05.Menu;
+import Task_0203.View;
 import Task_04.ViewableTable;
 import Task_05.ViewConsoleCommand;
 

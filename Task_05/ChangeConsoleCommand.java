@@ -1,8 +1,8 @@
 package Task_05;
 
-import Task_03.Item2d;
-import Task_03.View;
-import Task_03.ViewResult;
+import Task_0203.Item2d;
+import Task_0203.View;
+import Task_0203.ViewResult;
 
 /**
  * Консольна команда
@@ -55,7 +55,7 @@ public class ChangeConsoleCommand extends ChangeItemCommand implements ConsoleCo
 
     @Override
     public void execute() {
-        System.out.println("Change item: scale factor " + setOffset((int) Math.random() * 100));
+        System.out.println("Змінити елемент: масштабний коефіцієнт " + setOffset((int)(Math.random() * 100)));
         for (Item2d item : ((ViewResult) view).getItems()) {
             super.setItem(item);
             super.execute();
