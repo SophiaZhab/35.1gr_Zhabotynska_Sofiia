@@ -1,7 +1,7 @@
 package Task_04;
 import Task_0203.View;
 /**
- * Цей клас `Main` є підкласом `Task_03.Main`.
+ * Цей клас `Main` є підкласом `Task_0203.Main`.
  * Містить реалізацію статичного методу main()
  */
 public class Main extends Task_0203.Main {
